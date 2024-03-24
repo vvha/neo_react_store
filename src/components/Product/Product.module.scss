@@ -18,8 +18,28 @@
        margin: 15px auto 0;
     }
 
-    .name {
-
+    .info {
+        width: 86%;
+        height: 68px;
+        margin: 0 auto 30px;
+        display: flex;
+        justify-content: space-between;
+        .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .item{
+                    text-align: start;
+                }
+            }
     }
     
+    .rating_wrapper {
+        display: flex;
+        align-items: center;
+        gap:5px;
+        .rating{
+            color: var(--title);
+        }
+    }
 }

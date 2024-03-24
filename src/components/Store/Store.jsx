@@ -7,15 +7,15 @@ import {classes} from './Store.module.scss'
 
 const Store = () => {
   let products = [
-    {id: 1, title: 'pr1'},
-    {id: 2, title: 'pr2'},
-    {id: 3, title: 'pr3'},
-    {id: 4, title: 'pr4'},
-    {id: 5, title: 'pr5'}
+    {id: 1, name: 'pr1'},
+    {id: 2, name: 'pr2'},
+    {id: 3, name: 'pr3'},
+    {id: 4, name: 'pr4'},
+    {id: 5, name: 'pr5'}
   ]
   return (
     <main>
-      <Category title="наушники" products={products}/>
+      <Category name="наушники" products={products}/>
     </main>
   )
 }
