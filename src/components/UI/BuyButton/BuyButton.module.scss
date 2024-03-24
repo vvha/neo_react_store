@@ -1,0 +1,15 @@
+.buy_button{
+    background: none;
+    outline: none;
+    border:none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--text-main);
+    transition: .1s ease-in;
+
+    &:hover {
+        color: var(--text-secondary);
+    }
+}

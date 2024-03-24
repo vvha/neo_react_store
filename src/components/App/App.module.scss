@@ -1,0 +1,38 @@
+@import url('../../styles/variables.scss');
+
+@mixin montserrat-font($weight, $woff2-path) {
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: $weight;
+      src: url('#{$woff2-path}') format('woff2');
+    }
+}
+  
+  // Пример использования:
+  
+  // Регулярный шрифт
+  @include montserrat-font(400, '../../assets/fonts/Montserrat/Montserrat-Regular.woff2');
+  
+  // Полужирный шрифт
+  @include montserrat-font(600, '../../assets/fonts/Montserrat/Montserrat-SemiBold.woff2');
+  
+  // Жирный шрифт
+  @include montserrat-font(700, '../../assets/fonts/Montserrat/Montserrat-Bold.woff2');
+
+
+
+a {
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.app {
+    min-height: 100%;
+    max-width: 1110px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+}
