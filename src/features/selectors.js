@@ -4,11 +4,12 @@ export const selectAllProducts = (state) => state.products;
 
 export const selectCartItems = (state) => state.cart.items;
 
-// Создаем фабрику селекторов, которая принимает массив id для фильтрации
 export const makeSelectFilteredProducts = () =>
     createSelector(
+        // list of all products and id`s array
         [selectAllProducts, (_, idsToFilter) => idsToFilter],
         (products, idsToFilter) => {
+            // returns AllProducts array filtered by IdsToFilter
             return products.filter((product) =>
                 idsToFilter.includes(product.id)
             );
@@ -28,11 +29,12 @@ export const makeSelectProductById = () =>
 export const makeSelectTotalCost = () => createSelector(
     [selectCartItems, selectAllProducts],
     (cartItems, allProducts) => {
-      // Вычисляем общую стоимость
       let totalPrice = 0;
+      // iteration by cartItems to get total Price (getting price of id`s product)
       cartItems.forEach(cartItem => {
         const product = allProducts.find(product => product.id === cartItem.id);
         if (product) {
+            // acc
           totalPrice += product.price * cartItem.amount;
         }
       });

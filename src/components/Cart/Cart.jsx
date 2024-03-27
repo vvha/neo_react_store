@@ -10,16 +10,18 @@ import {
 } from "../../features/selectors";
 
 const Cart = () => {
+    // items selector
     const items = (state) => state.cart.items;
-    const itemsId = useSelector(items).reduce((acc, el) => {
-        acc.push(el.id);
+    // getting ids array from array of items objects
+    const itemsId = useSelector(items).reduce((acc, item) => {
+        acc.push(item.id);
         return acc;
     }, []);
-
-    const selectFilteredProducts = useMemo(
-        () => makeSelectFilteredProducts(),
-        []
-    );
+    // memoized selector forfiltered by id products
+    const selectFilteredProducts = useMemo( () => 
+        makeSelectFilteredProducts(),
+    []);
+    // getting array of products objects
     const products = useSelector((state) =>
         selectFilteredProducts(state, itemsId)
     );

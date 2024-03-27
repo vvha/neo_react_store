@@ -25,7 +25,6 @@ const categoriesSlice = createSlice({
         state[categoryIndex].products = state[categoryIndex].products.filter(product => product.id !== productId);
       }
     },
-    // Другие reducers по необходимости
   }
 });
 
