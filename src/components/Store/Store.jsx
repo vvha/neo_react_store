@@ -1,22 +1,21 @@
-import React from 'react'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
+import React, { useEffect } from 'react'
 import Category from '../Category/Category'
 
-import {classes} from './Store.module.scss'
+import classes from './Store.module.scss'
+import { useSelector } from 'react-redux'
 
 const Store = () => {
-  let products = [
-    {id: 1, name: 'pr1'},
-    {id: 2, name: 'pr2'},
-    {id: 3, name: 'pr3'},
-    {id: 4, name: 'pr4'},
-    {id: 5, name: 'pr5'}
-  ]
+  const categories = useSelector(state => state.categories)
+  if (!categories.length) {
+    return <div> Нет продуктов</div>
+  }
+
   return (
-    <main>
-      <Category name="наушники" products={products}/>
-    </main>
+    <section className={classes.store}>
+      {categories.map((category, index)=> (
+        <Category title={category.title} productsId={category.products} key={index}/>
+      ))}
+    </section>
   )
 }
 

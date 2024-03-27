@@ -3,6 +3,7 @@ import {Route, Routes} from 'react-router-dom'
 import {ROUTES} from "../../utils/routes"
 import Store from '../Store/Store'
 import Cart from '../Cart/Cart'
+
 const AppRoutes = () => (
     <Routes>
         <Route index element={<Store />} />

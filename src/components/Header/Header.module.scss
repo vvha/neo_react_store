@@ -1,5 +1,6 @@
 header {
     height: 60px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,5 +8,14 @@ header {
     .logo {
         width: fit-content;
         font-size: 25px;
+        transition: .08s ease-in;
+
+        &:hover {
+            color: var(--text-secondary);
+        }
+
+        &:active {
+            transform: scale(0.97)
+        }
     }
 }

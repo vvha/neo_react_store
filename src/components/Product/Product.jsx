@@ -1,38 +1,51 @@
-import React from 'react'
+import React from "react";
 
-import {Star} from '../../assets/images/svg/'
-import BuyButton from '../UI/BuyButton/BuyButton'
+import { Star } from "../../assets/images/svg/";
+import BuyButton from "../UI/BuyButton/BuyButton";
 
-import classes from './Product.module.scss'
+import classes from "./Product.module.scss";
+import { useDispatch } from "react-redux";
+import { addItemToCart, calculateTotal } from "../../features/CartSlice";
 
-const Product = ({data}) => {
-    const OrderProduct = () =>{
+const Product = ({ data }) => {
+    const dispatch = useDispatch();
 
-    }
+    return (
+        <div className={classes.product_container}>
+            <div className={classes.img_wrapper}>
+                <img src={data.img} alt="" />
+            </div>
+            <div className={classes.info}>
+                <div className={classes.container}>
+                    <div className={`${classes.item} ${classes.name}`}>
+                        {data.title}
+                    </div>
+                    <div className={classes.price_section}>
+                        <div className={`${classes.item} ${classes.price}`}>
+                            {data.price} ₽
+                        </div>
+                        {data.oldPrice ? (
+                            <s className={classes.oldPrice}>
+                                {data.oldPrice} ₽
+                            </s>
+                        ) : null}
+                    </div>
+                </div>
+                <div className={classes.container}>
+                    <div className={classes.rating_wrapper}>
+                        <Star />
+                        <div className={classes.rating}>{data.rate}</div>
+                    </div>
+                    <BuyButton
+                        className={`${classes.item}`}
+                        onClick={() => dispatch(addItemToCart({ id: data.id }))}
+                    >
+                        Купить
+                    </BuyButton>
+                </div>
+            </div>
+        </div>
+    );
+};
 
-  return (
-      <div className={classes.product_container}>
-          <div className={classes.img_wrapper}>
-              <img
-                  src="..\..\assets\images\headphones\wired\Apple-BYZ-S8521.png"
-                  alt=""
-              />
-          </div>
-          <div className={classes.info}>
-              <div className={classes.container}>
-                  <div className={`${classes.item} ${classes.name}`}>{data.name}</div>
-                  <div className={`${classes.item} ${classes.price}`}>price</div>
-              </div>
-              <div className={`${classes.item} ${classes.container}`}>
-                  <div className={classes.rating_wrapper}>
-                      <Star />
-                      <div className={classes.rating}>4.5</div>
-                  </div>
-                  <BuyButton className={`${classes.item}`} onClick={OrderProduct}>Купить</BuyButton>
-              </div>
-          </div>
-      </div>
-  );
-}
-
-export default Product
+export default Product;

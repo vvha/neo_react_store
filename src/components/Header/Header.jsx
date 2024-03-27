@@ -9,16 +9,14 @@ import classes from "./Header.module.scss"
 
 const Header = () => {
   return (
-    <header>
-      <div className={classes.logo}>
-        <Link to={ROUTES.STORE}>
-          QPICK
-        </Link>
-      </div>
+      <header>
+          <Link to={ROUTES.STORE}>
+              <div className={classes.logo}>QPICK</div>
+          </Link>
 
-      <NavBar/>
-    </header>
-  )
+          <NavBar />
+      </header>
+  );
 }
 
 export default Header

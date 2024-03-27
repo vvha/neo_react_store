@@ -1,0 +1,112 @@
+.item_container {
+    width: 600px;
+    height: 220px;
+    border-radius: 30px;
+    background-color: var(--main);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 20px 0px #0000001A;
+
+    button {
+        outline: none;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    .product {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            text-align: center;
+
+            img {
+                width: 149px;
+                height: 136px;
+            }
+
+            .counter {
+                bottom: 0;
+                display: flex;
+                width: 120px;
+                height: 30px;
+                align-items: center;
+                justify-content: space-between;
+
+                .count {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: var(--text-secondary);
+                    line-height: 20px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    transition: 0.1s ease-in;
+
+                    &:hover {
+                        transform: scale(1.05);
+                        background-color: var(--star);
+                    }
+
+                    &:active {
+                        transform: scale(.8);
+                    }
+
+                    &>* {
+                        margin: 0 auto;
+                    }
+                }
+
+                .total_count {
+                    width: fit-content;
+                }
+            }
+        }
+
+        .title {
+            .name {
+                width: fit-content;
+                font-size: 17px;
+                font-weight: 400;
+            }
+
+            .price {
+                color: var(--title);
+            }
+        }
+    }
+
+
+
+    .price_count {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .cycle_bin{
+        transition: 0.2s ease;
+
+        &:active{
+            transform: scale(0.8);
+        }
+    }
+
+    .right{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:end;
+    }
+
+}

@@ -6,15 +6,22 @@
     text-align: center;
     background-color: var(--main);
     font-size: 17px;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+    transition: .2s ease-out;
+    
+    &:hover {
+        transform: scale(1.1);
+        border-radius: 50px;
+        box-shadow: 0px 0px 40px 10px #0000001A;
+    }
 
     .img_wrapper {
        width: 220px;
        height: 240px; 
-       background-color: grey;
        margin: 15px auto 0;
     }
 
@@ -23,13 +30,21 @@
         height: 68px;
         margin: 0 auto 30px;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         .container {
                 display: flex;
-                flex-direction: column;
                 justify-content: space-between;
                 .item{
                     text-align: start;
+                }
+
+                .price {
+                    color:var(--text-secondary);
+                }
+                .oldPrice {
+                    font-size: 13px;
+                    color: var(--star);
                 }
             }
     }

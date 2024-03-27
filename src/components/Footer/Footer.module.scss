@@ -10,7 +10,17 @@ footer {
     background-color: var(--main);
 
     .logo {
+        width: fit-content;
         font-size:25px;
+        transition: .08s ease-in;
+
+        &:hover {
+            color: var(--text-secondary);
+        }
+
+        &:active {
+            transform: scale(0.97)
+        }
     }
 
     .list_container{
@@ -22,10 +32,14 @@ footer {
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 10px;
+        transition: 0.2s ease-out;
 
         .item {
             width: fit-content;
             font-size: 17px;
+            &:hover {
+                color: var(--text-secondary);
+            }
         }
 
         .lang_select {
@@ -33,13 +47,18 @@ footer {
             align-items: center;
             gap:10px;
             padding: 5px 0;
-
+            
             button {
                 cursor: pointer;
                 font-family: "Montserrat", sans-serif;
                 font-weight: 700;
                 background: none;
                 border:none;
+                transition: 0.15s ease-out;
+
+                &:hover {
+                    color: var(--star)
+                }
             }
         }
     }

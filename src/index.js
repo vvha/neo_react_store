@@ -4,15 +4,13 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./features/store";
 
-import {style} from './index.scss';
+import { style } from "./index.scss";
 import App from "./components/App/App";
 
-
-
-createRoot(document.getElementById('neoflex')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>
+createRoot(document.getElementById("neoflex")).render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
 );
